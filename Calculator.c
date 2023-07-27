@@ -1,12 +1,25 @@
 #include <stdio.h>
 #include <math.h>
 
+#define PI 3.14159265
+
 int main(){
 
 char op;
 
 int Num1;
 int Num2;
+int Num3;
+int Num4;
+
+int i;
+
+const double PI =  3.1415926;
+
+double x;
+double result;
+
+unsigned long long fact = 1;
 
 float Fnum1;
 float Fnum2;
@@ -22,7 +35,10 @@ printf("Enter s to find Square Root of a number:\n");
 printf("Enter c to find Cube Root of a number:\n");
 printf("Enter R to Round a number upward to its nearest integer:\n");
 printf("Enter r to Round a number downward to its nearest integer:\n");
-printf("Enter P to find Power of a number:\n\n");
+printf("Enter P to find Power of a number:\n");
+printf("Enter A to find the Absolute Value of a number:\n");
+printf("Enter O to find Arc Cosine of a number in radiants:\n");
+printf("Enter ! to find Factorial of a number: \n\n");
 
 scanf("%c", &op);
 
@@ -41,7 +57,7 @@ switch(op){
         printf("\n\n%d + %d = %d", Num1, Num2, Num1 + Num2);
         
         break;
-
+    
 
     case '-':
     	
@@ -84,7 +100,7 @@ switch(op){
         
         break;
         
-        
+	    
     case 'S':    
         
         printf("\nYou have chosen to Square a number. \n");
@@ -111,7 +127,7 @@ switch(op){
         
     case 's':    
         
-        printf("\nYou have chosen to find Square Root of a Number. \n");
+        printf("\nYou have chosen to find Square Root of a number. \n");
         
         printf("\nEnter the Number you want to find the Square Root of: \n");
         scanf("%f", &Fnum1);
@@ -123,7 +139,7 @@ switch(op){
         
     case 'c':
     	
-    	printf("\nYou have chosen to find Cube Root of a Number. \n");
+    	printf("\nYou have chosen to find Cube Root of a number. \n");
     	
     	printf("\nEnter the Number you want to find the Cube Root of: \n");
     	scanf("%f", &Fnum1);
@@ -135,7 +151,7 @@ switch(op){
     	
     case 'R':	
     	
-    	printf("\nYou have chosen to Round a number upwards: \n");
+    	printf("\nYou have chosen to Round a number upwards. \n");
     	
     	printf("\nEnter the Number you want to Round: \n");
     	scanf("%f", &Fnum1);
@@ -147,7 +163,7 @@ switch(op){
 	
 	case 'r':
 		
-		printf("\nYou have chosen to Round a number downwards: \n");
+		printf("\nYou have chosen to Round a number downwards. \n");
 		
 		printf("\nEnter the Number you want to Round: \n");
 		scanf("%f", &Fnum1);
@@ -159,7 +175,7 @@ switch(op){
    	    
     case 'P':
 	
-	    printf("\nYou have chosen to find Power of a Number: \n");     
+	    printf("\nYou have chosen to find Power of a number. \n");     
 	 	
     	printf("\nEnter the Number you want the power of: \n");
     	scanf("%f", &Fnum1);
@@ -170,6 +186,54 @@ switch(op){
     	printf("\n\n%.0f", pow(Fnum1, Fnum2));
     	
     	break;
+    	
+    	
+    case 'A':
+	
+	    printf("\nYou have chosen to find the Absolute Value of a number. \n");
+			
+		printf("\nEnter the Number you want the absolute value of: \n");	
+    	scanf("%d", Num1);
+    	
+    	printf("\n\n%d", abs(Num1));
+    	
+    	break;
+    	
+    	
+    case 'O':
+	
+		printf("\nYou have chosen to find Arc Cosine of a number. \n");
+		
+		printf("\nEnter the Number you want the arc cosine of: \n");
+		scanf("%d", Num1);
+		
+		printf("\n\n%d", acos(Num1));
+    	
+    	break;
+    	
+    	
+    case '!':	
+    	
+    	printf("\nYou have chosen to find Factorial of a number. \n");
+    	
+    	printf("\nEnter the Number you want the factorial of: \n");
+    	scanf("%d", &Num1);
+    	
+    	if(Num1 < 0)
+    	   printf("Error! Factorial of a negative number doesn't exist.");
+    	
+    	else{
+    		
+    	    for(i = 1; i <= Num1; ++i){
+    	    	fact *= i;
+    	    	
+			} 
+			
+			printf("\nFactorial of %d = %llu", Num1, fact);
+			
+		   }
+    	
+       		
     	
     }
 
