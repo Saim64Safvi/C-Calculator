@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-#define PI 3.14159265
 
 int main(){
 
@@ -12,12 +11,25 @@ int Num2;
 int Num3;
 int Num4;
 
+int t1 = 0;
+int t2 = 1;
+int nextTerm = 0;
+
 int i;
+
+int i2;
+int range;
 
 const double PI =  3.1415926;
 
+double Dnum1;
+double result2;
+
 double x;
 double result;
+
+double value; 
+double result3;
 
 unsigned long long fact = 1;
 
@@ -29,14 +41,20 @@ printf("Enter + for Addition:\n");
 printf("Enter - for Subtraction:\n");
 printf("Enter * for Multiplication:\n");
 printf("Enter / for Division:\n");
+printf("Enter F to display Fibonacci Sequence:\n");
+printf("Enter M to display Multiplication Tables of a given number:\n");
+printf("Enter P to display the value of PI:\n");
+printf("Enter E to display the value of e:\n");
 printf("Enter S to find Square a number:\n");
 printf("Enter C to find Cube of a number:\n");
 printf("Enter s to find Square Root of a number:\n");
 printf("Enter c to find Cube Root of a number:\n");
+printf("Enter I to find Sine of a number:\n");
 printf("Enter R to Round a number upward to its nearest integer:\n");
 printf("Enter r to Round a number downward to its nearest integer:\n");
-printf("Enter P to find Power of a number:\n");
+printf("Enter W to find Power of a number:\n");
 printf("Enter A to find the Absolute Value of a number:\n");
+printf("Enter K to find Cosine of a number: (WIP)\n");
 printf("Enter O to find Arc Cosine of a number in radiants:\n");
 printf("Enter ! to find Factorial of a number: \n\n");
 
@@ -100,6 +118,69 @@ switch(op){
         
         break;
         
+        
+    case 'F':
+	
+	    printf("\nYou have chosen to view the Fibonacci Sequence. \n");
+        
+        printf("\nEnter a positive number: \n");
+        scanf("%d", &Num1);
+        
+        printf("\nFibonacci Sequence: %d, %d, ", t1, t2);
+        nextTerm = t1 + t2;
+        
+        while(nextTerm <= Num1){
+        	
+          printf("%d, ", nextTerm);	
+          t1 = t2;
+		  t2 = nextTerm;
+		  	 
+          nextTerm = t1 + t2;        
+			
+		}
+        
+        break;
+        
+        
+    case 'M':
+	
+	    printf("\nYou have chosen to view the Mulitiplication Table. \n");    
+        
+        printf("\nEnter a Number: \n");
+        scanf("%d", &Num1);
+        
+        do{
+        	
+          printf("Enter the range(positive integer): ");	
+          scanf("%d", &range);
+		  
+	    } while(range <= 0);
+	    
+	    for (i2 = 1; i2 <= range; ++i2) {
+	      printf("%d * %d = %d \n", Num1, i2, Num1 * i2);	
+	    	
+		}
+        
+        break;
+        
+        
+    case 'P':
+	
+	    printf("\nYou have chosen to view the value of PI. \n");    
+        
+        printf("\n3.1415926535897932384626433\n");
+        
+        break;
+        
+    
+	case 'E':
+	
+	    printf("\nYou have chosen to view the value of e. \n");
+	    
+	    printf("\n2.71828182845904523536028747135266249775724709369995\n");
+	    
+	    break;
+	    
 	    
     case 'S':    
         
@@ -149,6 +230,20 @@ switch(op){
     	break;
     	
     	
+    case 'I':
+    	
+    	printf("\nYou have chosen to find Sine of a number. \n");
+    	
+    	printf("\nEnter the Number you want the Sine of: \n");
+	    scanf("%lf", &Dnum1);
+		
+		result2 = sin(Dnum1);
+		
+		printf("\n\n sin(%.2lf) = %lf\n", Dnum1, result2);
+		
+		break;
+		
+		
     case 'R':	
     	
     	printf("\nYou have chosen to Round a number upwards. \n");
@@ -173,7 +268,7 @@ switch(op){
    	    break;
    	    
    	    
-    case 'P':
+    case 'W':
 	
 	    printf("\nYou have chosen to find Power of a number. \n");     
 	 	
@@ -212,6 +307,20 @@ switch(op){
     	break;
     	
     	
+    case 'K':
+    	
+    	printf("\nYou have chosen to find Cosine of a number. \n");
+    	
+    	printf("\nEnter the Number you want the cosine of: \n");
+    	scanf("%.2lf", &value);
+    	
+    	result = cos(value);
+    	
+    	printf("\n\nThe cosine of %f is %f\n", value, result3);
+    	
+    	break;
+    	
+    	
     case '!':	
     	
     	printf("\nYou have chosen to find Factorial of a number. \n");
@@ -232,8 +341,6 @@ switch(op){
 			printf("\nFactorial of %d = %llu", Num1, fact);
 			
 		   }
-    	
-       		
     	
     }
 
