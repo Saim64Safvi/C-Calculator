@@ -20,6 +20,11 @@ int i;
 int i2;
 int range;
 
+int n;
+int i3 = 3;
+int count;
+int c;
+
 const double PI =  3.1415926;
 
 double Dnum1;
@@ -30,6 +35,15 @@ double result;
 
 double value; 
 double result3;
+
+double value2;
+double result4;
+
+double value3;
+double result5;
+
+double value4;
+double result6;
 
 unsigned long long fact = 1;
 
@@ -45,17 +59,21 @@ printf("Enter F to display Fibonacci Sequence:\n");
 printf("Enter M to display Multiplication Tables of a given number:\n");
 printf("Enter P to display the value of PI:\n");
 printf("Enter E to display the value of e:\n");
+printf("Enter Q to display Prime Numbers:\n");
 printf("Enter S to find Square a number:\n");
 printf("Enter C to find Cube of a number:\n");
 printf("Enter s to find Square Root of a number:\n");
 printf("Enter c to find Cube Root of a number:\n");
 printf("Enter I to find Sine of a number:\n");
+printf("Enter N to find ArcSine of a number:\n");
 printf("Enter R to Round a number upward to its nearest integer:\n");
 printf("Enter r to Round a number downward to its nearest integer:\n");
+printf("Enter T to find Tangent of a number:\n");
+printf("Enter U to find Arctangent of a number:\n");
 printf("Enter W to find Power of a number:\n");
 printf("Enter A to find the Absolute Value of a number:\n");
-printf("Enter K to find Cosine of a number: (WIP)\n");
-printf("Enter O to find Arc Cosine of a number in radiants:\n");
+printf("Enter K to find Cosine of a number:\n");
+printf("Enter O to find ArcCosine of a number in radiants:\n");
 printf("Enter ! to find Factorial of a number: \n\n");
 
 scanf("%c", &op);
@@ -182,11 +200,49 @@ switch(op){
 	    break;
 	    
 	    
+	case 'Q':
+	
+	    printf("\nYou have chosen to display Prime Numbers. \n");
+	    
+	    printf("\nEnter the number of prime numbers to print:\n");
+	    scanf("%d", &n);
+
+        if (n >= 1){
+        	
+        printf("\n\nFirst %d prime numbers are:\n\n",n);
+        printf("2\n");
+        
+        }
+
+        for (count = 2; count <= n;){
+        	
+        for (c = 2; c <= i3 - 1; c++){
+        	
+        if (i3%c == 0)
+        
+        break;
+        
+        }
+        
+        if (c == i3){
+        	
+      printf("%d\n", i3);
+      
+      count++;
+      
+      }
+      
+      i3++;
+      
+      }
+	    
+	  break;  
+	    
     case 'S':    
         
         printf("\nYou have chosen to Square a number. \n");
         
-        printf("\nEnter the Number you want to Square: \n");
+        printf("\nEnter the Number you want to square: \n");
         scanf("%d", &Num1);
         
         printf("\n\n%d", Num1 * Num1);
@@ -198,7 +254,7 @@ switch(op){
         
         printf("\nYou have chosen to Cube a number. \n");
         
-        printf("\nEnter the Number you want to Cube: \n");
+        printf("\nEnter the Number you want to cube: \n");
         scanf("%d", &Num1);
         
         printf("\n\n%d", Num1 * Num1 * Num1);
@@ -210,7 +266,7 @@ switch(op){
         
         printf("\nYou have chosen to find Square Root of a number. \n");
         
-        printf("\nEnter the Number you want to find the Square Root of: \n");
+        printf("\nEnter the Number you want to find the square root of: \n");
         scanf("%f", &Fnum1);
         
         printf("\n\n%.16Sf", sqrt(Fnum1));
@@ -222,7 +278,7 @@ switch(op){
     	
     	printf("\nYou have chosen to find Cube Root of a number. \n");
     	
-    	printf("\nEnter the Number you want to find the Cube Root of: \n");
+    	printf("\nEnter the Number you want to find the cube root of: \n");
     	scanf("%f", &Fnum1);
     	
     	printf("\n\n%.16f", cbrt(Fnum1));
@@ -234,7 +290,7 @@ switch(op){
     	
     	printf("\nYou have chosen to find Sine of a number. \n");
     	
-    	printf("\nEnter the Number you want the Sine of: \n");
+    	printf("\nEnter the Number you want the sine of: \n");
 	    scanf("%lf", &Dnum1);
 		
 		result2 = sin(Dnum1);
@@ -244,11 +300,25 @@ switch(op){
 		break;
 		
 		
+	case 'N':
+	
+		printf("\nYou have chosen to find Arcsine of a number. \n");
+		
+		printf("\nEnter the Number you want the arcsine of: \n");
+		scanf("%lf", &value2);
+		
+		result4 = asin(value2);
+		
+		printf("\nThe arc cosine of %lf is %lf", value2, result4);
+		
+		break;
+		
+		
     case 'R':	
     	
     	printf("\nYou have chosen to Round a number upwards. \n");
     	
-    	printf("\nEnter the Number you want to Round: \n");
+    	printf("\nEnter the Number you want to round: \n");
     	scanf("%f", &Fnum1);
     	   	
     	printf("\n\n%f", ceil(Fnum1));   	
@@ -260,10 +330,38 @@ switch(op){
 		
 		printf("\nYou have chosen to Round a number downwards. \n");
 		
-		printf("\nEnter the Number you want to Round: \n");
+		printf("\nEnter the Number you want to round: \n");
 		scanf("%f", &Fnum1);
 		
 		printf("\n\n%f", floor(Fnum1));
+   	    
+   	    break;
+   	    
+   	    
+   	case 'T':
+	   
+	    printf("\nYou have chosen to find Tangent of a number. \n");    
+   	    
+   	    printf("\nEnter the Number you want the tangent of: \n");
+   	    scanf("%lf", &value3);
+   	    
+   	    result5 = tan(value3);
+   	    
+   	    printf("\n\nTangent of %lf is %lf", value3, result5);
+   	    
+   	    break;
+   	    
+   	    
+   	case 'U':
+	   
+	    printf("\nYou have chosen to find Arctangent of a number. \n");   
+   	    
+   	    printf("\nEnter the Number you want the Arctangent of: \n");
+   	    scanf("%lf", &value4);
+   	    
+   	    result6 = atan(value4);
+   	    
+   	    printf("\n\nArctangent of %lf is %lf", value4, result6);
    	    
    	    break;
    	    
@@ -275,7 +373,7 @@ switch(op){
     	printf("\nEnter the Number you want the power of: \n");
     	scanf("%f", &Fnum1);
     	
-    	printf("\nEnter the Exponent: \n");
+    	printf("\nEnter the Exponent: \n"); 
     	scanf("%f", &Fnum2);
     	
     	printf("\n\n%.0f", pow(Fnum1, Fnum2));
@@ -293,13 +391,13 @@ switch(op){
     	printf("\n\n%d", abs(Num1));
     	
     	break;
-    	
+    		
     	
     case 'O':
 	
-		printf("\nYou have chosen to find Arc Cosine of a number. \n");
+		printf("\nYou have chosen to find Arccosine of a number. \n");
 		
-		printf("\nEnter the Number you want the arc cosine of: \n");
+		printf("\nEnter the Number you want the arccosine of: \n");
 		scanf("%d", Num1);
 		
 		printf("\n\n%d", acos(Num1));
@@ -312,11 +410,11 @@ switch(op){
     	printf("\nYou have chosen to find Cosine of a number. \n");
     	
     	printf("\nEnter the Number you want the cosine of: \n");
-    	scanf("%.2lf", &value);
+    	scanf("%lf", &value);
     	
-    	result = cos(value);
+    	result3 = cos(value);
     	
-    	printf("\n\nThe cosine of %f is %f\n", value, result3);
+    	printf("\n\nThe cosine of %lf is %f\n", value, result3);
     	
     	break;
     	
