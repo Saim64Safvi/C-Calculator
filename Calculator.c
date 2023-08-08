@@ -1,10 +1,21 @@
 #include <stdio.h>
 #include <math.h>
+#include <windows.h>
+#include <stdlib.h>
 
 
 int main(){
 
+char cc;
+
+float amount;
+float currency;
+
 char op;
+
+int Delay1 = 1000;
+int Delay2 = 2000;
+int Delay3 = 3000;
 
 int Num1;
 int Num2;
@@ -49,7 +60,8 @@ unsigned long long fact = 1;
 
 float Fnum1;
 float Fnum2;
-
+ 
+ 
 printf("Choose an operator:\n\n");
 printf("Enter + for Addition:\n");
 printf("Enter - for Subtraction:\n");
@@ -74,7 +86,9 @@ printf("Enter W to find Power of a number:\n");
 printf("Enter A to find the Absolute Value of a number:\n");
 printf("Enter K to find Cosine of a number:\n");
 printf("Enter O to find ArcCosine of a number in radiants:\n");
-printf("Enter ! to find Factorial of a number: \n\n");
+printf("Enter ! to find Factorial of a number: \n");
+
+printf("Enter = to Open Currency Converter: \n");
 
 scanf("%c", &op);
 
@@ -82,15 +96,17 @@ scanf("%c", &op);
 switch(op){
 
     case '+':
-
+         
         printf("\n\nYou have chosen Addition. \n");
         
         printf("\nEnter the first Number: \n");
         scanf("%d", &Num1);
         printf("\nEnter the second Number: \n");
-        scanf("%d", &Num2);
-
+        scanf("%d", &Num2);		 
+		 
         printf("\n\n%d + %d = %d", Num1, Num2, Num1 + Num2);
+        
+        
         
         break;
     
@@ -437,9 +453,12 @@ switch(op){
 			} 
 			
 			printf("\nFactorial of %d = %llu", Num1, fact);
-			
-		   }
-    	
+		    
+		}
+		    
+		break;
+		
+					 	
     }
-
+    
 }
